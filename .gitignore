@@ -1,0 +1,4 @@
+*.pdf
+*.xlsx
+**/test/
+**/__pycache__/
