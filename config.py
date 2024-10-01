@@ -1,8 +1,17 @@
-from pydantic_settings import BaseSettings, SettingsConfigDict
-from pydantic import SecretStr
+import os
+from pydantic_settings import BaseSettings
+from pydantic import Field, BaseModel
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 class Settings(BaseSettings):
-    weather_api_key: SecretStr
-    model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8')
+    OPEN_API_KEY: str = Field(env='OPEN_API_KEY')
+    WEATHER_API_KEY: str = Field(env='WEATHER_API_KEY')
+
+    class Config:
+        env_file = './.env'
+
 
 config = Settings()
