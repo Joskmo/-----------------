@@ -3,5 +3,6 @@
 **/test/
 **/__pycache__/
 .env
+!sample.env
 .venv
 *.json
