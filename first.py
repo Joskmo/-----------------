@@ -8,7 +8,7 @@ def get_coordinates(city: str, API_KEY: str):
     result = requests.get(
         url=f'http://api.openweathermap.org/geo/1.0/direct?q={city}&limit=1&appid={API_KEY}')
     coordinates = None
-    if (result.status_code == 200 and len(result.json())):
+    if (result.ok and len(result.json())):
         data = result.json()[0]
         coordinates = {
             "lat": data['lat'],
