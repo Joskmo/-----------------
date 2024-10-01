@@ -77,7 +77,7 @@ def weather():
     Температура: {data['current']['temp_c']} °C
     Описание: {data['current']['condition']['text']}
     Ощущается как: {data['current']['feelslike_c']} °C
-    Скорость ветра: {kph_to_mps(data['current']['wind_kph'])}
+    Скорость ветра: {kph_to_mps(data['current']['wind_kph'])} м/с
     Влажность: {data['current']['humidity']} %'''
         print(reply_msg)
     else:
