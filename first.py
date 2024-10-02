@@ -1,4 +1,3 @@
-from string import capwords
 from config import config
 import requests
 
