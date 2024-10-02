@@ -1,7 +1,6 @@
 from string import capwords
 from config import config
 import requests
-import json
 
 
 def get_coordinates(city: str, API_KEY: str):

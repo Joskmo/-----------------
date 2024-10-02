@@ -1,6 +1,6 @@
 import os
 from pydantic_settings import BaseSettings
-from pydantic import Field, BaseModel
+from pydantic import Field
 from dotenv import load_dotenv
 
 load_dotenv()
