@@ -5,11 +5,18 @@ import json
 
 
 def get_coordinates(city: str, API_KEY: str):
-    result = requests.get(
-        url=f'http://api.openweathermap.org/geo/1.0/direct?q={city}&limit=1&appid={API_KEY}')
+    params = {
+        'q': city,
+        'limit': '1',
+        'appid': API_KEY
+    }
+    response = requests.get(
+        url=f'http://api.openweathermap.org/geo/1.0/direct',
+        params=params
+    )
     coordinates = None
-    if (result.ok and len(result.json())):
-        data = result.json()[0]
+    if (response.ok and len(response.json())):
+        data = response.json()[0]
         coordinates = {
             "lat": data['lat'],
             "lon": data['lon'],
