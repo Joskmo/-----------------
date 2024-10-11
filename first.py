@@ -43,8 +43,6 @@ def open_weather():
             params=coordinates,
             timeout=2
         )
-        print(coordinates)
-        print(response.url)
         if response.ok:
             data = response.json()
             print(
